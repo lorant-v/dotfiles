@@ -56,3 +56,12 @@ If a command cannot run in the current environment, report that clearly and prov
 - Keep commit messages short and imperative (existing history uses styles like `Add ...`, `Fix ...`, `Swap ...`).
 - Describe why the change exists, not just what changed.
 - Avoid bundling unrelated updates.
+
+## Inspiration
+- https://github.com/logandonley/dotfiles
+  - Using chezmoi -> ansible for tool instalation
+- benchoncy
+  - https://github.com/benchoncy/dotfiles
+  - https://github.com/benchoncy/my-workstation-setup-playbook
+- https://github.com/natelandau/dotfiles
+  - https://github.com/natelandau/dotfiles
