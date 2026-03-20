@@ -39,6 +39,7 @@ Examples in this repo:
 - Do not rename/move chezmoi-managed files unless required.
 - Be extra careful with template conditionals (OS checks, ..).
 - Never use destructive git commands unless explicitly requested.
+- Use Conventional Commits for commit messages.
 
 ## Validation after changes
 

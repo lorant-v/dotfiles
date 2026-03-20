@@ -1,0 +1,24 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "default_agent": "plan",
+  "share": "manual",
+  "autoupdate": true,
+  "permission": {
+    "bash": "ask",
+    "edit": "ask",
+    "external_directory": "ask"
+  },
+  "watcher": {
+    "ignore": [
+      ".git/**",
+      ".direnv/**",
+      ".next/**",
+      ".turbo/**",
+      ".cache/**",
+      "coverage/**",
+      "dist/**",
+      "build/**",
+      "node_modules/**"
+    ]
+  }
+}
