@@ -1,0 +1,5 @@
+#!/bin/sh
+set -eu
+echo "[chezmoi] Running script: run Ansible"
+
+ansible-playbook -i localhost, --ask-become-pass "{{ .chezmoi.sourceDir }}/ansible/playbook.yml"

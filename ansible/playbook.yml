@@ -1,0 +1,22 @@
+---
+- name: Bootstrap local workstation
+  hosts: localhost
+  connection: local
+  gather_facts: true
+  vars:
+    packages:
+      - git
+      - gh
+
+  tasks:
+    # - name: Print debug info
+    #   ansible.builtin.debug:
+    #     var: ansible_facts
+
+    - name: Install packages
+      become: true
+      ansible.builtin.package:
+        name: "{{ packages }}"
+        state: present
+        update_cache: true
+

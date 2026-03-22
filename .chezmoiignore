@@ -1,0 +1,6 @@
+# Manually ignore files
+ignore-*
+
+# Bootstrapping
+ansible/
+ansible/**

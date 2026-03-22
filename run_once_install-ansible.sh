@@ -1,7 +1,9 @@
 #!/bin/sh
 set -eu
+echo "[chezmoi] Running script: install Ansible"
 
 if command -v ansible-playbook >/dev/null 2>&1; then
+  echo "[chezmoi] Ansible already installed, skipping"
   exit 0
 fi
 
