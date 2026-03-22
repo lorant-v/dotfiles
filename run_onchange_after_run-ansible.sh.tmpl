@@ -1,4 +1,7 @@
 #!/bin/sh
+
+# Ansible hash: {{ include "ansible/playbook.yml" | sha256sum }}
+
 set -eu
 echo "[chezmoi] Running script: run Ansible"
 
