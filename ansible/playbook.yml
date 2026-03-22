@@ -22,15 +22,20 @@
         sandbox_parent_dir: "{{ ansible_env.HOME }}/.local/share"
         sandbox_dir: "{{ sandbox_parent_dir }}/opencode-sandbox"
       block:
-        - name: Ensure sandbox parent directory exists
+        - name: Ensure parent directory exists
           ansible.builtin.file:
             path: "{{ sandbox_parent_dir }}"
             state: directory
             mode: "0755"
 
-        - name: Clone opencode sandbox repository
+        - name: Clone repository
           ansible.builtin.git:
             repo: "{{ sandbox_repo }}"
             dest: "{{ sandbox_dir }}"
             version: HEAD
             update: true
+
+        - name: Run installer
+          ansible.builtin.command:
+            chdir: "{{ sandbox_dir }}"
+            cmd: "./install/install.sh"
