@@ -4,16 +4,20 @@
   "share": "manual",
   "autoupdate": true,
   "permission": {
-    "bash": "ask",
-    "edit": "ask",
-    "external_directory": "ask"
+    "*": "allow", // Default, wins last defined 
+    "bash": {
+      "*": "ask",
+      "git *": "allow",
+      "npm *": "allow",
+      "rm *": "deny",
+      "grep *": "allow"
+    },
+    "external_directory": "deny"
   },
   "watcher": {
     "ignore": [
       ".git/**",
-      ".direnv/**",
       ".next/**",
-      ".turbo/**",
       ".cache/**",
       "coverage/**",
       "dist/**",
