@@ -7,16 +7,10 @@
     packages:
       - git
       - gh
+    sandbox_repo: "https://github.com/lorant-v/opencode-sandbox.git"
+    sandbox_dir: "{{ ansible_env.HOME }}/.local/share/opencode-sandbox"
+    sandbox_parent_dir: "{{ ansible_env.HOME }}/.local/share/"
 
   tasks:
-    # - name: Print debug info
-    #   ansible.builtin.debug:
-    #     var: ansible_facts
-
-    - name: Install packages
-      become: true
-      ansible.builtin.package:
-        name: "{{ packages }}"
-        state: present
-        update_cache: true
-
+    - ansible.builtin.import_tasks: tasks/packages.yml
+    - ansible.builtin.import_tasks: tasks/opencode-sandbox.yml

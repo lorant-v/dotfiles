@@ -1,0 +1,13 @@
+---
+- name: Ensure sandbox parent directory exists
+  ansible.builtin.file:
+    path: "{{ sandbox_parent_dir }}"
+    state: directory
+    mode: "0755"
+
+- name: Clone opencode sandbox repository
+  ansible.builtin.git:
+    repo: "{{ sandbox_repo }}"
+    dest: "{{ sandbox_dir }}"
+    version: HEAD
+    update: true
