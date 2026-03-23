@@ -8,8 +8,12 @@
     - name: Install packages
       vars:
         packages:
+          - build-essential
+          - ca-certificates
           - git
           - gh
+          - curl
+          - man-db
       become: true
       ansible.builtin.package:
         name: "{{ packages }}"
