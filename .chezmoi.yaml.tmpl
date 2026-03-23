@@ -2,6 +2,20 @@
 {{ $name := promptStringOnce . "name" "What is your name?" -}}
 {{ $email := promptStringOnce . "email" "What is your email address?" -}}
 
+{{ $isWSL := contains "wsl" (lower .chezmoi.kernel.osrelease) -}}
+{{ $copyHostSSH := false -}}
+{{ $windowsUser := "" -}}
+{{ if $isWSL -}}
+{{ $copyHostSSH = promptBoolOnce . "wsl.copyHostSSH" "Copy the Windows host .ssh folder into WSL?" -}}
+{{ if $copyHostSSH -}}
+{{ $windowsUser = promptStringOnce . "wsl.windowsUser" "Which Windows username should be used for the .ssh copy?" -}}
+{{ end -}}
+{{ end -}}
+
 data:
   name: {{ $name | quote }}
   email: {{ $email | quote }}
+  wsl:
+    isWSL: {{ $isWSL }}
+    copyHostSSH: {{ $copyHostSSH }}
+    windowsUser: {{ $windowsUser | quote }}
