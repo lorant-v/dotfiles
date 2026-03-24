@@ -12,6 +12,9 @@
 {{ end -}}
 {{ end -}}
 
+{{ $installOhMyBash := promptBoolOnce . "shell.installOhMyBash" "Install Oh My Bash?" -}}
+
+
 data:
   name: {{ $name | quote }}
   email: {{ $email | quote }}
@@ -19,3 +22,5 @@ data:
     isWSL: {{ $isWSL }}
     copyHostSSH: {{ $copyHostSSH }}
     windowsUser: {{ $windowsUser | quote }}
+  shell:
+    installOhMyBash: {{ $installOhMyBash }}

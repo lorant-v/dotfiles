@@ -2,5 +2,4 @@
 set -eu
 echo "[chezmoi] Running script: run Ansible"
 
-# Playbook hash: {{ include "ansible/playbook.yml" | sha256sum }}
-ansible-playbook -i localhost, --ask-become-pass "{{ .chezmoi.sourceDir }}/ansible/playbook.yml"
+ansible-playbook --ask-become-pass -i "$HOME/.bootstrap/ansible/inventory.yaml" "$HOME/.bootstrap/ansible/playbook.yaml"

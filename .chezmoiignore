@@ -1,9 +1,8 @@
 README.md
 AGENTS.md
 
+bash
+bash/**
+
 # Manually ignore files
 ignore-*
-
-# Bootstrapping
-ansible/
-ansible/**

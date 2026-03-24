@@ -1,0 +1,20 @@
+# Enable the subsequent settings only in interactive sessions
+case $- in
+  *i*) ;;
+    *) return;;
+esac
+
+{{ if .shell.installOhMyBash }}
+{{- include "bash/.bashrc_ohmybash" -}}
+{{ else }}
+{{- include "bash/.bashrc_plain" -}}
+{{ end }}
+
+# set PATH so it includes user's private bin if it exists
+if [ -d "$HOME/bin" ] ; then
+    PATH="$HOME/bin:$PATH"
+fi
+
+if [ -d "$HOME/.local/bin" ] ; then
+    PATH="$HOME/.local/bin:$PATH"
+fi

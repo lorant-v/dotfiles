@@ -1,7 +1,6 @@
 ---
 - name: Bootstrap local workstation
-  hosts: localhost
-  connection: local
+  hosts: all
   gather_facts: true
 
   tasks:
@@ -43,3 +42,14 @@
           ansible.builtin.command:
             chdir: "{{ sandbox_dir }}"
             cmd: "./install/install.sh"
+
+    - name: Install Oh My Bash
+      when: shell_install_oh_my_bash
+      vars:
+        oh_my_bash_repo: "https://github.com/ohmybash/oh-my-bash.git"
+        oh_my_bash_dir: "{{ ansible_env.HOME }}/.oh-my-bash"
+      ansible.builtin.git:
+        repo: "{{ oh_my_bash_repo }}"
+        dest: "{{ oh_my_bash_dir }}"
+        version: master
+        update: true
