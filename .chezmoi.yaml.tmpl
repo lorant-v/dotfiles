@@ -1,23 +1,25 @@
 
-{{ $name := promptStringOnce . "name" "What is your name?" -}}
-{{ $email := promptStringOnce . "email" "What is your email address?" -}}
+{{ $name := promptStringOnce . "git.name" "What is your name (git)" -}}
+{{ $email := promptStringOnce . "git.email" "What is your email address (git)" -}}
 
 {{ $isWSL := contains "wsl" (lower .chezmoi.kernel.osrelease) -}}
 {{ $copyHostSSH := false -}}
 {{ $windowsUser := "" -}}
+
 {{ if $isWSL -}}
-{{ $copyHostSSH = promptBoolOnce . "wsl.copyHostSSH" "Copy the Windows host .ssh folder into WSL?" -}}
+{{ $copyHostSSH = promptBoolOnce . "wsl.copyHostSSH" "Copy the Windows host .ssh folder into WSL" -}}
 {{ if $copyHostSSH -}}
-{{ $windowsUser = promptStringOnce . "wsl.windowsUser" "Which Windows username should be used for the .ssh copy?" -}}
+{{ $windowsUser = promptStringOnce . "wsl.windowsUser" "Which Windows username should be used for the .ssh copy" -}}
 {{ end -}}
 {{ end -}}
 
-{{ $installOhMyBash := promptBoolOnce . "shell.installOhMyBash" "Install Oh My Bash?" -}}
+{{ $installOhMyBash := promptBoolOnce . "shell.installOhMyBash" "Install Oh My Bash" -}}
 
 
 data:
-  name: {{ $name | quote }}
-  email: {{ $email | quote }}
+  git:
+    name: {{ $name | quote }}
+    email: {{ $email | quote }}
   wsl:
     isWSL: {{ $isWSL }}
     copyHostSSH: {{ $copyHostSSH }}
