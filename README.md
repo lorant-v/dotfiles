@@ -2,9 +2,13 @@
 
 These dotfiles are managed using [chezmoi](https://github.com/twpayne/chezmoi).
 
-## Installation
+## Getting Started
 
-Requires `curl`.
+### Prerequisites
+
+* `curl` should be installed
+
+### Installation
 
 ```shell
 sh -c "$(curl -fsLS get.chezmoi.io)" -- init --apply lorant-v
