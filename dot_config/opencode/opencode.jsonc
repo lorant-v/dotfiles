@@ -8,7 +8,7 @@
     "bash": {
       "*": "ask",
       "git *": "allow",
-      "npm *": "allow",
+      "ls *": "allow",
       "rm *": "deny",
       "grep *": "allow"
     },
