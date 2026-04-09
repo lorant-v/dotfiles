@@ -19,7 +19,7 @@
         state: present
         update_cache: true
 
-    - name: Setup opencode-sandbox
+    - name: Install opencode-sandbox
       vars:
         sandbox_repo: "https://github.com/lorant-v/opencode-sandbox.git"
         sandbox_parent_dir: "{{ ansible_env.HOME }}/.local/share"
@@ -53,3 +53,13 @@
         dest: "{{ oh_my_bash_dir }}"
         version: master
         update: true
+
+    - name: Install mise
+      ansible.builtin.shell: curl https://mise.run | sh
+      args:
+        creates: "{{ ansible_env.HOME }}/.local/bin/mise"
+
+    - name: Install global mise tools
+      ansible.builtin.command:
+        cmd: "{{ ansible_env.HOME }}/.local/bin/mise install"
+      changed_when: false

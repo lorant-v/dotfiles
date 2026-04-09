@@ -18,3 +18,7 @@ fi
 if [ -d "$HOME/.local/bin" ] ; then
     PATH="$HOME/.local/bin:$PATH"
 fi
+
+if [ -x "$HOME/.local/bin/mise" ] ; then
+    eval "$("$HOME/.local/bin/mise" activate bash)"
+fi
