@@ -1,21 +1,21 @@
-# Lorant's dotfiles
+# Dotfiles
 
-These dotfiles are managed using [chezmoi](https://github.com/twpayne/chezmoi).
+This configuration is managed with [chezmoi](https://www.chezmoi.io/).
 
 ## Getting Started
 
 ### Prerequisites
 
-* `curl` should be installed
+* `curl`
 
 ### Installation
 
-```shell
+```sh
 sh -c "$(curl -fsLS get.chezmoi.io)" -- init --apply lorant-v
 ```
 
-On first apply, `chezmoi` prompts for your name and email address.
+On first execution, chezmoi prompts for git author details and a few optional setup choices.
 
-If the machine is running under WSL, it can also optionally copy the Windows host `~/.ssh` directory into WSL. That copy only runs when you opt in and the target `~/.ssh` does not already exist.
+On WSL, setup can optionally copy the Windows host's SSH directory. This is opt-in and will not overwrite an existing SSH directory.
 
-Bootstrap also installs Ansible when it is missing, then runs `ansible/playbook.yml`. Expect a sudo or become-password prompt during package installation.
+Bootstrap installs Ansible if needed and runs the local workstation playbook. Expect a sudo/become password prompt for system package installation. 
