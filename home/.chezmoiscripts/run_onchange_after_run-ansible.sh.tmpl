@@ -3,4 +3,4 @@ set -eu
 echo "[chezmoi] Running script: run Ansible"
 
 # Playbook hash: {{ include "dot_bootstrap/ansible/playbook.yaml" | sha256sum }}
-ansible-playbook --ask-become-pass -i "$HOME/.bootstrap/ansible/inventory.yaml" "$HOME/.bootstrap/ansible/playbook.yaml"
+ansible-playbook --ask-become-pass --connection=local -i localhost, "$HOME/.bootstrap/ansible/playbook.yaml"
