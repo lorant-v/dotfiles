@@ -21,7 +21,6 @@ This repository manages personal dotfiles with `chezmoi`. Keep the setup minimal
 ## Safety
 
 - Never print or commit secrets, tokens, private keys, or credentials.
-- Do not weaken SSH-copy safeguards or make sensitive setup opt-out by default.
 - Prefer authenticated tooling already available over asking for pasted credentials.
 
 ## Validation
