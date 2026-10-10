@@ -1,16 +1,10 @@
-{{ $name := promptStringOnce . "git.name" "What is your name (git)" -}}
-{{ $email := promptStringOnce . "git.email" "What is your email address (git)" -}}
+{{- $name := "Lorant Vrinceanu" -}}
+{{- $email := "lorant.vrinceanu@gmail.com" -}}
 
 {{ $isWSL := contains "wsl" (lower .chezmoi.kernel.osrelease) -}}
 
-{{ $installOhMyBash := promptBoolOnce . "shell.installOhMyBash" "Install Oh My Bash" -}}
-
-
 data:
-  git:
-    name: {{ $name | quote }}
-    email: {{ $email | quote }}
+  name: {{ $name | quote }}
+  email: {{ $email | quote }}
   wsl:
     isWSL: {{ $isWSL }}
-  shell:
-    installOhMyBash: {{ $installOhMyBash }}
