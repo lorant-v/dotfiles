@@ -1,6 +1,9 @@
 # Manual ignore
 ignore-*
 
+# Files that should never be placed in $HOME
+
+
 {{ if ne .platform.os "linux"}}
 # Linux-only files
 .chezmoiscripts/linux/**
@@ -19,7 +22,7 @@ ignore-*
 # Non-Windows files
 .bashrc
 .bash_profile
-.bootstrap/**
+.bootstrap/ansible/**
 .config/mise/**
 
 {{ end }}

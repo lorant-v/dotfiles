@@ -1,0 +1,17 @@
+---
+# Packages present on all supported platforms via the system package manager.
+# ansible.builtin.package dispatches to apt/pacman/brew automatically.
+# Platform-specific tools that don't exist cross-platform are handled in
+# their respective roles respectively.
+
+- name: Install packages
+  ansible.builtin.package:
+    name:
+      - git
+      - curl
+      - wget
+      - htop
+      - tmux
+      - ripgrep
+    state: present
+  become: true

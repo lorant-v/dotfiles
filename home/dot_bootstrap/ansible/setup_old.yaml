@@ -4,20 +4,6 @@
   gather_facts: true
 
   tasks:
-    - name: Install packages
-      vars:
-        packages:
-          - build-essential
-          - ca-certificates
-          - git
-          - gh
-          - curl
-          - man-db
-      become: true
-      ansible.builtin.package:
-        name: "{{ packages }}"
-        state: present
-        update_cache: true
 
     - name: Install oh-my-bash
       vars:

@@ -1,0 +1,6 @@
+---
+ubuntu_packages:
+  - build-essential
+  - ca-certificates
+  - man-db
+  - manpages

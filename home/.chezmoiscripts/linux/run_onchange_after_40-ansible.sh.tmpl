@@ -1,0 +1,15 @@
+#!/bin/sh
+set -eu
+echo "[chezmoi] Running script: run Ansible"
+
+ansible-playbook \
+  --ask-become-pass \
+  --connection=local \
+  -i localhost, \
+  "$HOME/.bootstrap/ansible/setup.yaml"
+
+# Keep a hash entry for every Ansible input file. 
+# Changes to these hashes cause chezmoi to rerun the playbook.
+# {{ include "dot_bootstrap/ansible/setup.yaml" | sha256sum }}
+# {{ include "dot_bootstrap/ansible/group_vars/all.yaml" | sha256sum }}
+# {{ include "dot_bootstrap/ansible/roles/base/tasks/main.yaml" | sha256sum }}

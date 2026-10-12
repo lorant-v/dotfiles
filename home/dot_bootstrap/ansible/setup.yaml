@@ -1,0 +1,22 @@
+---
+- name: Set up workstation
+  hosts: all
+  connection: local
+  gather_facts: true
+
+  pre_tasks:
+    - name: Detect WSL
+      ansible.builtin.set_fact:
+        is_wsl: "'microsoft' in (ansible_facts['kernel'] | lower) | bool"
+
+      
+  roles:
+    - role: base
+
+    - role: ubuntu
+      when: ansible_distribution in ["Ubuntu", "Debian"]
+
+    - role: common
+
+    - role: wsl
+      when: is_wsl

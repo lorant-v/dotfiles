@@ -1,37 +1,23 @@
 #!/bin/sh
+# Install core dependencies before dotfiles are applied.
 set -eu
-echo "[chezmoi] Running script: install Ansible"
+echo "[chezmoi] Running script: Install dependencies"
 
+echo "[chezmoi] Installing Ansible"
 if command -v ansible-playbook >/dev/null 2>&1; then
   echo "[chezmoi] Ansible already installed, skipping"
   exit 0
 fi
 
-install_with_apt() {
+if command -v apt-get >/dev/null 2>&1; then
   sudo apt-get update
   sudo apt-get install -y ansible
-}
-
-install_with_dnf() {
-  sudo dnf install -y ansible
-}
-
-install_with_pacman() {
-  sudo pacman -Sy --noconfirm ansible
-}
-
-install_with_brew() {
-  brew install ansible
-}
-
-if command -v apt-get >/dev/null 2>&1; then
-  install_with_apt
 elif command -v dnf >/dev/null 2>&1; then
-  install_with_dnf
+  sudo dnf install -y ansible
 elif command -v pacman >/dev/null 2>&1; then
-  install_with_pacman
+  sudo pacman -Sy --noconfirm ansible
 elif command -v brew >/dev/null 2>&1; then
-  install_with_brew
+  brew install ansible
 else
   echo "No supported package manager found for installing ansible" >&2
   exit 1
