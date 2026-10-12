@@ -1,10 +1,11 @@
 {
   "$schema": "https://opencode.ai/config.json",
   "default_agent": "plan",
-  "share": "manual",
   "autoupdate": true,
   "permission": {
-    "*": "allow", // Default, wins last defined 
+    "*": "ask", // Default, wins last defined 
+    "webfetch": "allow",
+    "external_directory": "deny",
     "bash": {
       "*": "ask",
       "git *": "allow",
@@ -12,8 +13,10 @@
       "rm *": "deny",
       "grep *": "allow"
     },
-    "external_directory": "deny"
   },
+  "websearch": {
+    "provider": "exa"
+  }
   "watcher": {
     "ignore": [
       ".git/**",

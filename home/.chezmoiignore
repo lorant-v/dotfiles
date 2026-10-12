@@ -20,5 +20,6 @@ ignore-*
 .bashrc
 .bash_profile
 .bootstrap/**
+.config/mise/**
 
 {{ end }}
