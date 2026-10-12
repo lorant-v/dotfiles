@@ -22,7 +22,7 @@ ignore-*
 # Non-Windows files
 .bashrc
 .bash_profile
-.bootstrap/ansible/**
+.bootstrap/**
 .config/mise/**
 
 {{ end }}
