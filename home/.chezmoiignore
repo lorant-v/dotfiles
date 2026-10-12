@@ -1,17 +1,17 @@
 # Manual ignore
 ignore-*
 
-{{ if neq .platform.os "linux"}}
+{{ if ne .platform.os "linux"}}
 # Linux-only files
 .chezmoiscripts/linux/**
 
 {{ end }}
 
-{{ if ne .chezmoi.os "darwin" }}
+{{ if ne .platform.os "darwin" }}
 # Darwin-only files
 {{ end }}
 
-{{ if ne .chezmoi.os "windows" }}
+{{ if ne .platform.os "windows" }}
 # Windows-only files
 .chezmoiscripts/windows/**
 
