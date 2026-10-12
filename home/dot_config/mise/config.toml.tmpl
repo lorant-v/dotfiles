@@ -1,0 +1,5 @@
+[tools]
+node = "lts"
+{{ if .platform.isWSL -}}
+"npm:@anthropic-ai/sandbox-runtime" = "latest"
+{{- end -}}

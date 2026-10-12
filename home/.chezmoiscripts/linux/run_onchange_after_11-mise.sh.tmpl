@@ -1,0 +1,9 @@
+#!/bin/sh
+set -eu
+echo "[chezmoi] Running script: run mise"
+
+mise install
+
+# Keep a hash entry for every input file. 
+# Changes to these hashes cause chezmoi to rerun the playbook.
+# {{ includeTemplate "dot_config/mise/config.toml.tmpl" . | sha256sum }}

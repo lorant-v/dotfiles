@@ -13,8 +13,3 @@
   ansible.builtin.shell: curl https://mise.run | sh
   args:
     creates: "{{ ansible_env.HOME }}/.local/bin/mise"
-
-- name: Install global mise tools
-  ansible.builtin.command:
-    cmd: "{{ ansible_env.HOME }}/.local/bin/mise install"
-  changed_when: false

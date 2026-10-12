@@ -7,9 +7,8 @@
   pre_tasks:
     - name: Detect WSL
       ansible.builtin.set_fact:
-        is_wsl: "'microsoft' in (ansible_facts['kernel'] | lower) | bool"
+        is_wsl: "{{ 'wsl' in (ansible_facts['kernel'] | lower) }}"
 
-      
   roles:
     - role: base
 
