@@ -1,2 +1,24 @@
-# Manually ignore files
+# Manual ignore
 ignore-*
+
+{{ if neq .platform.os "linux"}}
+# Linux-only files
+.chezmoiscripts/linux/**
+
+{{ end }}
+
+{{ if ne .chezmoi.os "darwin" }}
+# Darwin-only files
+{{ end }}
+
+{{ if ne .chezmoi.os "windows" }}
+# Windows-only files
+.chezmoiscripts/windows/**
+
+{{ else }}
+# Non-Windows files
+.bashrc
+.bash_profile
+.bootstrap/**
+
+{{ end }}

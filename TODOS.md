@@ -1,6 +1,6 @@
 - [ ] simplify ansible + mise?
 - [ ] install srt + deps + opencode
-- [ ] update opencode config
+- [ ] update opencode config + simplify
 - [ ] test on windows
 - [ ] separate list of packages to install via ansible?
 - [ ] separate profiles? windows/linux/wsl

@@ -1,10 +1,19 @@
 {{- $name := "Lorant Vrinceanu" -}}
 {{- $email := "lorant.vrinceanu@gmail.com" -}}
 
-{{ $isWSL := contains "wsl" (lower .chezmoi.kernel.osrelease) -}}
+{{- $os := .chezmoi.os -}}
+{{- $distro := "" -}}
+{{- $isWSL := false -}}
+{{- if eq $os "linux" -}}
+  {{- $distro = .chezmoi.osRelease.id -}}
+  {{- $isWSL = .chezmoi.kernel.osrelease | lower | contains "microsoft" -}}
+{{- end -}}
 
 data:
   name: {{ $name | quote }}
   email: {{ $email | quote }}
-  wsl:
+
+  platform:
+    os: {{ $os | quote }}
+    distro: {{ $distro | quote }}
     isWSL: {{ $isWSL }}
