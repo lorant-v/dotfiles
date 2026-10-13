@@ -24,5 +24,6 @@ ignore-*
 .bash_profile
 .bootstrap/**
 .config/mise/**
+.oh-my-bash/**
 
 {{ end }}
