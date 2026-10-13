@@ -1,0 +1,1 @@
+alias opencode-sandbox='srt --settings .srt-settings.json opencode --standalone'

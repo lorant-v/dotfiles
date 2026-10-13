@@ -3,9 +3,8 @@
   "default_agent": "plan",
   "autoupdate": true,
   "permission": {
-    "*": "ask", // Default, wins last defined 
-    "webfetch": "allow",
-    "external_directory": "deny",
+    "*": "allow", // Default, wins last defined 
+    "external_directory": "ask",
     "bash": {
       "*": "ask",
       "git *": "allow",
@@ -14,9 +13,6 @@
       "grep *": "allow"
     },
   },
-  "websearch": {
-    "provider": "exa"
-  }
   "watcher": {
     "ignore": [
       ".git/**",
