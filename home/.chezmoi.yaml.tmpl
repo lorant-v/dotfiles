@@ -9,6 +9,12 @@
   {{- $isWSL = .chezmoi.kernel.osrelease | lower | contains "microsoft" -}}
 {{- end -}}
 
+{{- $profiles := promptMultichoice "Which profiles to enable"
+    (list "homelab")
+    (list)
+-}}
+
+
 data:
   name: {{ $name | quote }}
   email: {{ $email | quote }}
@@ -17,3 +23,6 @@ data:
     os: {{ $os | quote }}
     distro: {{ $distro | quote }}
     isWSL: {{ $isWSL }}
+  
+  profiles: {{ $profiles | toJson }}
+

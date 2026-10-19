@@ -13,8 +13,6 @@
       - htop
       - tmux
       - ripgrep
-      - bubblewrap
-      - socat
     state: present
   become: true
 

@@ -10,7 +10,10 @@
         is_wsl: "{{ 'wsl' in (ansible_facts['kernel'] | lower) }}"
 
   roles:
-    - role: base
+    - role: common
+
+    - role: linux
+      when: ansible_system == "Linux"
 
     - role: ubuntu
       when: ansible_distribution in ["Ubuntu", "Debian"]

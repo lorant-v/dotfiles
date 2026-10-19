@@ -2,4 +2,8 @@
 node = "lts"
 "npm:@anthropic-ai/sandbox-runtime" = "latest"
 "npm:@opencode/cli" = "latest"
+
+{{ if has "homelab" .profiles -}}
+# homelab
 opentofu = "latest"
+{{- end }}
