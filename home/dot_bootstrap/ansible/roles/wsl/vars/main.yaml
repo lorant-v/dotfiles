@@ -1,5 +1,2 @@
 ---
-wsl_packages:
-  - bubblewrap
-  - socat
-  - ripgrep
+wsl_packages: []

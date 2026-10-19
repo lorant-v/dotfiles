@@ -15,7 +15,5 @@
     - role: ubuntu
       when: ansible_distribution in ["Ubuntu", "Debian"]
 
-    - role: common
-
     - role: wsl
       when: is_wsl
