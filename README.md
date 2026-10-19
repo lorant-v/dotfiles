@@ -2,7 +2,7 @@
 
 Personal dotfiles for Linux (Arch/Ubuntu/WSL), macOS and Windows, managed with [chezmoi](https://chezmoi.io).
 
-## Getting Started
+## Getting started
 
 ### Linux/macOS
 
@@ -12,17 +12,13 @@ sh -c "$(curl -fsLS get.chezmoi.io)" -- init --apply lorant-v
 
 ### Windows
 
-The first run needs an elevated shell because enabling WSL and the Virtual Machine Platform are admin-only operations. After the initial setup, `chezmoi apply` and `chezmoi update` can be run from a normal PowerShell.
+The first run needs an elevated shell because enabling WSL and the Virtual Machine Platform are admin-only operations. After that, `chezmoi apply` and `chezmoi update` run from a normal PowerShell.
 
 ```powershell
 # Run as Administrator
 Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
 winget install Git.Git twpayne.chezmoi
-chezmoi init --apply https://github.com/B-urb/dotfiles.git
+chezmoi init --apply https://github.com/lorant-v/dotfiles.git
 ```
 
-
-
-On first execution, chezmoi prompts for git author details and a few optional setup choices.
-
-Bootstrap installs Ansible if needed and runs the local workstation playbook. Expect a sudo/become password prompt for system package installation. 
+chezmoi prompts for local configuration details like name and which profiles to enable. It then installs Ansible if it's missing and runs the local playbook, which installs system packages and the mise binary. mise installs the user tools after that. Expect a sudo prompt for the system packages.
