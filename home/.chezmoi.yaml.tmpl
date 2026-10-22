@@ -25,7 +25,7 @@ data:
   
   profiles: {{ $profiles | toJson }}
 
-{{ if ne .$os "windows" }}
+{{ if ne $os "windows" }}
 hooks:
   read-source-state:
     pre:
