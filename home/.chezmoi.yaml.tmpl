@@ -14,7 +14,6 @@
     (list)
 -}}
 
-
 data:
   name: {{ $name | quote }}
   email: {{ $email | quote }}
@@ -26,3 +25,9 @@ data:
   
   profiles: {{ $profiles | toJson }}
 
+{{ if ne .$os "windows" }}
+hooks:
+  read-source-state:
+    pre:
+      command: .local/share/chezmoi/home/.bootstrap.sh
+{{- end -}}

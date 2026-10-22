@@ -1,7 +1,12 @@
 [tools]
+bitwarden = "latest"
+
 node = "lts"
 "npm:@anthropic-ai/sandbox-runtime" = "latest"
-"npm:@opencode/cli" = "latest"
+"npm:@opencode/cli" = {
+  version = "latest",
+  allow_builds = ["@opencode/cli"],
+}
 
 {{ if has "homelab" .profiles -}}
 # homelab
