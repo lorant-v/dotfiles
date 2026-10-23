@@ -25,10 +25,3 @@ data:
   
   profiles: {{ $profiles | toJson }}
   use_ansible: false
-
-{{ if ne $os "windows" }}
-hooks:
-  read-source-state:
-    pre:
-      command: .local/share/chezmoi/home/.bootstrap.sh
-{{- end -}}
