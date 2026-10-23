@@ -1,5 +1,4 @@
 #!/bin/sh
-# Install Ansible before dotfiles are applied.
 set -eu
 echo "[chezmoi] Running script: Install Ansible"
 

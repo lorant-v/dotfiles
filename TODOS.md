@@ -1,8 +1,9 @@
-- [ ] update readme
+- [ ] update docs
 - [ ] ssh config
-- [ ] install srt + deps + opencode
 - [ ] try mise instead of chezmoi+ansible
 - [ ] install ansible with mise?
+- [ ] use {{ template "script-header" . }},
+  - echo "[chezmoi] Running script: {{ base .chezmoi.sourceFile | trimSuffix ".tmpl" }}"
 - [x] update opencode config + simplify
 - [x] test on windows
 - [x] separate list of packages to install via ansible?
@@ -13,3 +14,4 @@
 ```
 
 - [x] simplify ansible + mise?
+- [x] install srt + deps + opencode

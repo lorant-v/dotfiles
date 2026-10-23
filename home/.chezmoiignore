@@ -7,17 +7,17 @@ ignore-*
 .chezmoiscripts/linux/10-ansible.sh
 {{ end  }}
 
-{{ if ne .platform.os "linux"}}
+{{ if ne .chezmoi.os "linux"}}
 # Linux-only files
 .chezmoiscripts/linux/**
 
 {{ end }}
 
-{{ if ne .platform.os "darwin" }}
+{{ if ne .chezmoi.os "darwin" }}
 # Darwin-only files
 {{ end }}
 
-{{ if ne .platform.os "windows" }}
+{{ if ne .chezmoi.os "windows" }}
 # Windows-only files
 .chezmoiscripts/windows/**
 

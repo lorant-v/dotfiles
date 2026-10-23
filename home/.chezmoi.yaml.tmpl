@@ -1,12 +1,11 @@
 {{- $name := "Lorant Vrinceanu" -}}
 {{- $email := "lorant.vrinceanu@gmail.com" -}}
 
-{{- $os := .chezmoi.os -}}
-{{- $distro := "" -}}
+{{- $osID := .chezmoi.os -}}
 {{- $isWSL := false -}}
-{{- if eq $os "linux" -}}
-  {{- $distro = .chezmoi.osRelease.id -}}
-  {{- $isWSL = .chezmoi.kernel.osrelease | lower | contains "microsoft" -}}
+{{- if eq .chezmoi.os "linux" -}}
+{{-   $osID = printf "%s-%s" .chezmoi.os .chezmoi.osRelease.id -}}
+{{-   $isWSL = .chezmoi.kernel.osrelease | lower | contains "microsoft" -}}
 {{- end -}}
 
 {{- $profiles := promptMultichoice
@@ -20,8 +19,7 @@ data:
   email: {{ $email | quote }}
 
   platform:
-    os: {{ $os | quote }}
-    distro: {{ $distro | quote }}
+    osID: {{ $osID | quote }}
     isWSL: {{ $isWSL }}
   
   profiles: {{ $profiles | toJson }}

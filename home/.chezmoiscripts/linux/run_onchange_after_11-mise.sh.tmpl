@@ -2,7 +2,7 @@
 set -eu
 echo "[chezmoi] Running script: run mise"
 
-mise install
+"$HOME/.local/bin/mise" install
 
 # Keep a hash entry for every input file. 
 # Changes to these hashes cause chezmoi to rerun the playbook.

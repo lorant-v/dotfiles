@@ -1,0 +1,57 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+{{ $sudo := "sudo " -}}
+{{ if eq .chezmoi.username "root" -}}
+{{   $sudo = "" -}}
+{{ end -}}
+
+{{ if eq .platform.osID "linux-debian" "linux-ubuntu" "linux-raspbian" -}}
+
+{{ $packages := list
+     "build-essential"
+     "ca-certificates"
+     "curl"
+     "wget"
+     "git"
+     "htop"
+     "man-db"
+     "manpages"
+     "tmux"
+     "bubblewrap"
+     "socat"
+     "jq"
+     "ripgrep" 
+-}}
+
+{{ if eq .platform.osID "linux-ubuntu" -}}
+{{   $packages = mustAppend $packages "btop" -}}
+{{ end -}}
+
+{{ if has "personal" .profiles -}}
+{{   $packages = mustAppend $packages "musl-tools" -}}
+{{ end -}}
+
+{{ $sudo }}apt-get update
+{{ $sudo }}apt-get install -y {{ $packages | join " " }}
+
+{{- else if eq .platform.osID "linux-arch" -}}
+
+{{ $packages := list
+     "curl"
+-}}
+
+{{ $sudo }}pacman --sync --needed --noconfirm {{ $packages | join " " }}
+
+{{- else if eq .platform.osID "linux-fedora" -}}
+
+{{ $packages := list
+     "curl"
+-}}
+
+{{ $sudo }}dnf install --assumeyes {{ $packages | join " " }}
+
+{{- else -}}
+echo "Unsupported OS {{ .platform.osID }}" >&2
+exit 1
+{{ end -}}
