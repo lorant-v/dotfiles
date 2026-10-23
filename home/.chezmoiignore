@@ -1,8 +1,11 @@
-# Manual ignore
+# Files that should never be placed in $HOME
 ignore-*
 
-# Files that should never be placed in $HOME
-
+{{ if not .use_ansible }}
+.provisioning/**
+.chezmoiscripts/linux/01-install-ansible.sh
+.chezmoiscripts/linux/10-ansible.sh
+{{ end  }}
 
 {{ if ne .platform.os "linux"}}
 # Linux-only files

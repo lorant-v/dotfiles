@@ -24,6 +24,7 @@ data:
     isWSL: {{ $isWSL }}
   
   profiles: {{ $profiles | toJson }}
+  use_ansible: false
 
 {{ if ne $os "windows" }}
 hooks:
