@@ -9,8 +9,9 @@
   {{- $isWSL = .chezmoi.kernel.osrelease | lower | contains "microsoft" -}}
 {{- end -}}
 
-{{- $profiles := promptMultichoice "Which profiles to enable"
-    (list "homelab")
+{{- $profiles := promptMultichoice
+    "Which profiles to enable"
+    (list "personal" "homelab")
     (list)
 -}}
 
