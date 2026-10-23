@@ -3,8 +3,7 @@ ignore-*
 
 {{ if not .use_ansible }}
 .provisioning/**
-.chezmoiscripts/linux/03-install-ansible.sh
-.chezmoiscripts/linux/10-ansible.sh
+.chezmoiscripts/linux/*ansible*
 {{ end  }}
 
 {{ if ne .chezmoi.os "linux"}}
