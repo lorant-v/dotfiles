@@ -6,17 +6,17 @@ ansible-playbook \
   --ask-become-pass \
   --connection=local \
   -i localhost, \
-  "$HOME/.bootstrap/ansible/setup.yaml"
+  "$HOME/.provisioning/ansible/setup.yaml"
 
 # Keep a hash entry for every Ansible input file. 
 # Changes to these hashes cause chezmoi to rerun the playbook.
-# {{ include "dot_bootstrap/ansible/setup.yaml" | sha256sum }}
-# {{ includeTemplate "dot_bootstrap/ansible/group_vars/all.yaml.tmpl" . | sha256sum }}
-# {{ include "dot_bootstrap/ansible/roles/common/tasks/main.yaml" | sha256sum }}
-# {{ include "dot_bootstrap/ansible/roles/common/vars/main.yaml" | sha256sum }}
-# {{ include "dot_bootstrap/ansible/roles/linux/tasks/main.yaml" | sha256sum }}
-# {{ include "dot_bootstrap/ansible/roles/linux/vars/main.yaml" | sha256sum }}
-# {{ include "dot_bootstrap/ansible/roles/ubuntu/tasks/main.yaml" | sha256sum }}
-# {{ include "dot_bootstrap/ansible/roles/ubuntu/vars/main.yaml" | sha256sum }}
-# {{ include "dot_bootstrap/ansible/roles/wsl/tasks/main.yaml" | sha256sum }}
-# {{ include "dot_bootstrap/ansible/roles/wsl/vars/main.yaml" | sha256sum }}
+# {{ include "dot_provisioning/ansible/setup.yaml" | sha256sum }}
+# {{ includeTemplate "dot_provisioning/ansible/group_vars/all.yaml.tmpl" . | sha256sum }}
+# {{ include "dot_provisioning/ansible/roles/common/tasks/main.yaml" | sha256sum }}
+# {{ include "dot_provisioning/ansible/roles/common/vars/main.yaml" | sha256sum }}
+# {{ include "dot_provisioning/ansible/roles/linux/tasks/main.yaml" | sha256sum }}
+# {{ include "dot_provisioning/ansible/roles/linux/vars/main.yaml" | sha256sum }}
+# {{ include "dot_provisioning/ansible/roles/ubuntu/tasks/main.yaml" | sha256sum }}
+# {{ include "dot_provisioning/ansible/roles/ubuntu/vars/main.yaml" | sha256sum }}
+# {{ include "dot_provisioning/ansible/roles/wsl/tasks/main.yaml" | sha256sum }}
+# {{ include "dot_provisioning/ansible/roles/wsl/vars/main.yaml" | sha256sum }}
