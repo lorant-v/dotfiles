@@ -1,4 +1,4 @@
-# Dotfiles
+# Lorant's Dotfiles
 
 Personal dotfiles for Linux (Arch/Ubuntu/WSL), macOS and Windows, managed with [chezmoi](https://chezmoi.io).
 
@@ -22,3 +22,9 @@ chezmoi init --apply https://github.com/lorant-v/dotfiles.git
 ```
 
 chezmoi prompts for local configuration details like name and which profiles to enable. It then installs Ansible if it's missing and runs the local playbook, which installs system packages and the mise binary. mise installs the user tools after that. Expect a sudo prompt for the system packages.
+
+## Inspiration
+
+- [twpayne's dotfiles](https://github.com/twpayne/dotfiles) for structure, OS handling
+- [mkasberg's dotfiles](https://github.com/mkasberg/dotfiles) for [secrets management](https://www.mikekasberg.com/blog/2026/01/31/dotfiles-secrets-in-chezmoi.html), testing script
+- [logandonley's dotfiles](https://github.com/logandonley/dotfiles/tree/main) for provisioning using Ansible (elegant solution, but I phased it out)
