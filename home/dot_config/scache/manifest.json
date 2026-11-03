@@ -1,0 +1,13 @@
+{
+  "default_provider": "bitwarden",
+  "secrets": [
+      {
+        "ref": "abc123#login.password",
+        "out": "secrets.example.password"
+      }
+  ],
+  "output": {
+    "path": ".chezmoidata/scache.json",
+    "format": "json"
+  }
+}
