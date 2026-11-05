@@ -2,12 +2,8 @@
   "default_provider": "bitwarden",
   "secrets": [
       {
-        "ref": "3b0fce5d-29b4-416c-a706-b4ec00d199cd#notes",
-        "out": "secrets.ssh1"
-      },
-      {
-        "ref": "91c5cff9-9f99-4815-bd7f-b40f0128da44#login.password",
-        "out": "secrets.pwd1"
+        "ref": "2f531853-f9bc-484e-9ec6-b4f900b0baf7#notes",
+        "out": "secrets.ssh.hladmin"
       }
   ],
   "output": {
