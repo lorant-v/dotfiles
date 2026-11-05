@@ -26,5 +26,6 @@ ignore-*
 .bash_profile
 .provisioning/**
 .config/mise/**
+.config/oh-my-bash/**
 
 {{ end }}
