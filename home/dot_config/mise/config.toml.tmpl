@@ -9,11 +9,13 @@ uv = {
 
 # node
 node = "lts"
-"npm:@anthropic-ai/sandbox-runtime" = "latest"
 "npm:@opencode/cli" = {
   version = "latest",
   allow_builds = ["@opencode/cli"],
 }
+{{ if ne .platform.osID "windows" -}}
+"npm:@anthropic-ai/sandbox-runtime" = "latest"
+{{ end -}}
 
 {{ if has "homelab" .profiles -}}
 # homelab

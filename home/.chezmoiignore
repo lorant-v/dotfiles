@@ -25,7 +25,6 @@ ignore-*
 .bashrc
 .bash_profile
 .provisioning
-.config/mise
 .oh-my-bash
 .config/oh-my-bash
 

@@ -1,0 +1,13 @@
+$ErrorActionPreference = "Stop"
+
+Write-Host "[chezmoi] Running script: run mise"
+
+& "$HOME\.local\bin\mise.exe" install
+
+if ($LASTEXITCODE -ne 0) {
+    exit $LASTEXITCODE
+}
+
+# Keep a hash entry for every input file. 
+# Changes to these hashes cause chezmoi to rerun the playbook.
+# {{ includeTemplate "dot_config/mise/config.toml.tmpl" . | sha256sum }}
