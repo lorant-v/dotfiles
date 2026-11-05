@@ -3,7 +3,19 @@
   "secrets": [
       {
         "ref": "2f531853-f9bc-484e-9ec6-b4f900b0baf7#notes",
-        "out": "secrets.ssh.hladmin"
+        "out": "secrets.ssh.hladmin.private"
+      },
+      {
+        "ref": "b6ceb934-a3d4-40c3-b875-b4f900ee6187#notes",
+        "out": "secrets.ssh.hladmin.public"
+      },
+      {
+        "ref": "4d210839-1d05-4ea9-bb4b-b4f900ee86c2#notes",
+        "out": "secrets.ssh.lorant.private"
+      },
+      {
+        "ref": "ecbe6cde-e5e4-4393-9dfd-b4f900eea2bf#notes",
+        "out": "secrets.ssh.lorant.public"
       }
   ],
   "output": {

@@ -1,0 +1,8 @@
+Host github.com
+    IdentityFile ~/.ssh/lorant
+    IdentitiesOnly yes
+
+Host *.home.arpa
+	User root
+	IdentityFile ~/.ssh/hladmin
+    IdentitiesOnly yes
