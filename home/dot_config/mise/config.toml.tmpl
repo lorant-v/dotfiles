@@ -1,7 +1,13 @@
 [tools]
 bitwarden = "latest"
-uv = "latest"
 
+# python
+uv = { 
+  version = "latest", 
+  postinstall = { run = "uv python install --default", when = "always" }
+}
+
+# node
 node = "lts"
 "npm:@anthropic-ai/sandbox-runtime" = "latest"
 "npm:@opencode/cli" = {
