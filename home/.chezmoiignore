@@ -1,20 +1,22 @@
-# Manual ignore
+# Files that should never be placed in $HOME
 ignore-*
 
-# Files that should never be placed in $HOME
+{{ if not .use_ansible }}
+.provisioning/**
+.chezmoiscripts/linux/*ansible*
+{{ end  }}
 
-
-{{ if ne .platform.os "linux"}}
+{{ if ne .chezmoi.os "linux"}}
 # Linux-only files
 .chezmoiscripts/linux/**
 
 {{ end }}
 
-{{ if ne .platform.os "darwin" }}
+{{ if ne .chezmoi.os "darwin" }}
 # Darwin-only files
 {{ end }}
 
-{{ if ne .platform.os "windows" }}
+{{ if ne .chezmoi.os "windows" }}
 # Windows-only files
 .chezmoiscripts/windows/**
 
@@ -22,7 +24,7 @@ ignore-*
 # Non-Windows files
 .bashrc
 .bash_profile
-.bootstrap/**
+.provisioning/**
 .config/mise/**
 .oh-my-bash/**
 

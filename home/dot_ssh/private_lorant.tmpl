@@ -1,0 +1,3 @@
+{{ if and (dig "secrets" "ssh" "lorant" false .) (has "personal" .profiles) -}}
+{{ .secrets.ssh.lorant.private }}
+{{ end -}}

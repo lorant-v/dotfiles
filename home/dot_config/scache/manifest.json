@@ -1,0 +1,25 @@
+{
+  "default_provider": "bitwarden",
+  "secrets": [
+      {
+        "ref": "9334e590-dc0a-41d5-aabe-b4f900f9b535#notes",
+        "out": "secrets.ssh.hladmin.private"
+      },
+      {
+        "ref": "b6ceb934-a3d4-40c3-b875-b4f900ee6187#notes",
+        "out": "secrets.ssh.hladmin.public"
+      },
+      {
+        "ref": "a5f9076b-9faf-465d-bb06-b4f900f9de07#notes",
+        "out": "secrets.ssh.lorant.private"
+      },
+      {
+        "ref": "ecbe6cde-e5e4-4393-9dfd-b4f900eea2bf#notes",
+        "out": "secrets.ssh.lorant.public"
+      }
+  ],
+  "output": {
+    "path": ".chezmoidata/scache.json",
+    "format": "json"
+  }
+}
