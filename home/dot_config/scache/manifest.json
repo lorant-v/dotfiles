@@ -2,7 +2,7 @@
   "default_provider": "bitwarden",
   "secrets": [
       {
-        "ref": "2f531853-f9bc-484e-9ec6-b4f900b0baf7#notes",
+        "ref": "9334e590-dc0a-41d5-aabe-b4f900f9b535#notes",
         "out": "secrets.ssh.hladmin.private"
       },
       {
@@ -10,7 +10,7 @@
         "out": "secrets.ssh.hladmin.public"
       },
       {
-        "ref": "4d210839-1d05-4ea9-bb4b-b4f900ee86c2#notes",
+        "ref": "a5f9076b-9faf-465d-bb06-b4f900f9de07#notes",
         "out": "secrets.ssh.lorant.private"
       },
       {
