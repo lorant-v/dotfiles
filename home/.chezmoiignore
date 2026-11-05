@@ -24,8 +24,9 @@ ignore-*
 # Non-Windows files
 .bashrc
 .bash_profile
-.provisioning/**
-.config/mise/**
-.oh-my-bash/**
+.provisioning
+.config/mise
+.oh-my-bash
+.config/oh-my-bash
 
 {{ end }}
